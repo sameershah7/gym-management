@@ -1,0 +1,233 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #010f1a;
+  --secondary: #0c2b43;
+
+  --background: #dcd9e6;
+  --surface: #ffffff;
+
+  --text: #060112;
+  --light-text: #f2eefc;
+
+  --heading: #150570;
+  --border: #171621;
+
+  --section: #05131f;
+  --highlight: #00359ea1;
+
+  --btn-bg: #20146e;
+  --btn-text: #ffffff;
+
+  --hover-bg: #2104de7e;
+  --input-focus: #2104de7e;
+
+
+  --success: #198754cb;
+  --error: #ea3e4f;
+  --warning: #ffc107;
+  --shadow: #150570 0px 2px 4px;
+}
+
+html,
+body {
+  background: linear-gradient(174deg, rgb(185, 175, 211) 0%, rgb(194, 195, 203) 120%) !important;
+}
+
+
+.button {
+  background: var(--btn-bg) !important;
+  color: var(--btn-text) !important;
+  box-shadow: var(--shadow);
+  border: none;
+  padding: 0.5rem 1rem !important;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--hover-bg);
+}
+
+
+input[type="checkbox"] {
+  transform: scale(1.5);
+  margin: 5px;
+  accent-color: var(--primary-color);
+}
+
+
+/* From input group */
+.input-group {
+  position: relative;
+}
+
+.input {
+  border: solid 1.5px var(--border) ;
+  background: none;
+  padding: 0.7rem;
+  font-size: 1rem;
+  color: var(--text);
+  width: 100%;
+  border-radius: 7px !important;
+  transition: all 0.2s ease;
+}
+
+/* Focus default */
+.input:focus {
+  border-radius: 4px;
+  outline: none;
+  border: 1.5px solid var(--input-focus) ;
+  box-shadow: 0 0 0 0.12rem var(--input-focus);
+}
+
+/* Invalid input (non-focus and focus) */
+.input-invalid{
+  border: 1.5px solid var(--error) !important;
+}
+.input-invalid:focus {
+  box-shadow: 0 0 0 0.12rem var(--error) !important;
+}
+
+.user-label {
+  position: absolute;
+  left: 15px;
+  color: var(--text);
+  pointer-events: none;
+  transform: translateY(1rem);
+  transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.input:focus~label,
+.float-label {
+  transform: translateY(-50%) scale(0.8);
+  background-color: var(--surface);
+  padding: 0 .2em;
+  color: var(--text);
+}
+
+
+
+#warning-txt {
+  display: none;
+}
+
+.text-danger {
+  display: block !important;
+  color: var(--error);
+}
+
+@media (min-width:992px) {
+  .hero-section {
+    min-height: calc(100vh - 80px)
+  }
+}
+
+.form-multi-select {
+  outline-color: 2px solid var(--border) !important;
+}
+
+
+/* This is dropdown css */
+
+
+.dropdown-items {
+  display: none;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  top: 100%;
+  transition: all 0.2s ease-in-out;
+  opacity: 0;
+  transform: translateY(5px);
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+
+}
+
+
+.dropdown-items.show {
+  opacity: 100;
+  display: block !important;
+}
+
+.dropdown-item {
+  padding: 0.25rem !important;
+  border-radius: 3px !important;
+  margin-bottom: 2px !important;
+  cursor: pointer;
+}
+
+.dropdown-item:hover,
+.selected-tag:hover,
+.dropdown-item.selected {
+  background-color: var(--hover-bg) !important;
+}
+
+.remove-item {
+  cursor: pointer;
+  color: var(--border);
+  font-weight: bold;
+  margin-left: 8px;
+}
+
+.remove-item:hover {
+  color: var(--error);
+}
+
+
+.placeholder-text {
+  font-style: italic;
+  color: #888;
+  padding-left: 5px;
+}
+
+.card {
+  border-radius: 1rem;
+}
+
+.edit-btn {
+  cursor: pointer;
+}
+
+
+option:hover {
+  background: var(--hover-bg) !important;
+}
+
+
+/* checking for username change or profile  */
+
+/* Valid input (non-focus and focus) */
+.input-valid{
+  border: 1.5px solid var(--success) !important;
+}
+.input-valid:focus {
+  box-shadow: 0 0 0 0.12rem var(--success) !important;
+}
+
+
+.username-invalid{
+  border: 1.5px solid var(--error) !important;
+}
+.username-invalid:focus {
+  box-shadow: 0 0 0 0.12rem var(--error) !important;
+}
+
+
+.input-focus:focus {
+  border-radius: 4px;
+  outline: none;
+  border: 1.5px solid var(--input-focus) !important;
+  box-shadow: 0 0 0 0.12rem var(--input-focus) !important;
+}
